@@ -18,6 +18,17 @@ func RegisterRoutes() {
 	router.Get("/", handlers.HomeShow)
 
 	// Users
-	router.Get("/users", handlers.GetUser)
+	router.Get("/users", handlers.GetUsers)
 	router.Post("/users", handlers.CreateUser)
+	router.Get("/users/:id", handlers.GetUserById)
+	router.Put("/users/:id", handlers.UpdateUserById)
+	router.Delete("/users/:id", handlers.DeleteUserById)
+
+	// Category
+	router.Get("/categories", handlers.GetCategories)
+	router.Get("/categories/:id", handlers.GetCategoryById)
+	router.Post("/categories", handlers.CreateCategory)
+
+	// Posts
+	router.Get("/posts", handlers.GetAllPosts)
 }
